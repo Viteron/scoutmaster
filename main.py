@@ -10,6 +10,7 @@ def create_file_with_name():
         # Записать имя файла внутри файла
         file.write(file_name)
 
+# Пример использования функции
 
 def take_list_dirict():
     "Функция получения списка папок"
