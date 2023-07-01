@@ -1,5 +1,7 @@
-import os
 import glob
+import os
+import shutil
+
 
 
 def get_path():
@@ -57,6 +59,9 @@ def chenge_path_in_scout():
     "Функция изменения пути к видео в скаутах"
     my_list = take_list_dirict()
     adress = get_path()+"\\"
+    new_directory = "00_all_scouts"
+    if not os.path.exists(new_directory):
+        os.makedirs(new_directory)
     for name_folder in my_list:
         full_adress = adress + name_folder
         dvw_files = glob.glob(full_adress + '/*.dvw')
@@ -67,6 +72,7 @@ def chenge_path_in_scout():
             modified_adress_video = adress_video.replace("\\\\", "\\")
             final_adress_video = "Camera0=" + modified_adress_video + "\n"
             replace_line_in_file(file_path, index, final_adress_video)
+            shutil.copy(file_path, adress+new_directory)
 
 
 if __name__ == "__main__":
