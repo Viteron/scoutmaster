@@ -41,6 +41,7 @@ def find_text_in_file(file_name, search_text):
     return -1  # Если текст не найден
 
 
+
 def replace_line_in_file(file_name, index, new_line):
     "Функция для замены нужной строки в файле"
     with open(file_name, 'r') as file:
