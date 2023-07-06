@@ -9,7 +9,6 @@ def get_path():
     return os.getcwd()
 
 
-
 def take_list_dirict():
     "Функция получения списка папок"
     return os.listdir()
@@ -29,7 +28,6 @@ def find_name_video(path_folder):
         else:
             print("Проверьте наличие видео в папке: " + path_folder)
             return "non video"
-
 
 
 def find_text_in_file(file_name, search_text):
@@ -57,8 +55,6 @@ def replace_line_in_file(file_name, index, new_line):
         file.close()
 
 
-
-directory = r"C:\Users\Никита\Desktop\проекты\scoutmaster"  # путь к директории, содержащей папки
 def chenge_path_in_scout():
     "Функция изменения пути к видео в скаутах"
     my_list = take_list_dirict()
@@ -78,6 +74,7 @@ def chenge_path_in_scout():
             replace_line_in_file(file_path, index, final_adress_video)
             shutil.copy(file_path, adress+new_directory)
 
+            
 def get_new_name_withs_scout(path_folder):
     "Получение названия папки из скаута"
     dvw_files = glob.glob(path_folder + '/*.dvw')
@@ -105,5 +102,4 @@ def rename_folder ():
 if __name__ == "__main__":
     chenge_path_in_scout()
     rename_folder()
-    input("все готово!")
 
